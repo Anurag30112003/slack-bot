@@ -37,7 +37,9 @@ def quote():
     
     response = requests.get("https://zenquotes.io/api/random/")
     query = response.json()[0]["q"]
-    client.chat_postMessage(channel=channel_id, text=f"Quote - {query}")
+    author = response.json()[0]["a"]
+    quote = query + " - " + author
+    client.chat_postMessage(channel=channel_id, text=f"Quote - {quote}")
     print(query)
     return Response(), 200
 
