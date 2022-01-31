@@ -43,5 +43,9 @@ def quote():
     print(query)
     return Response(), 200
 
+@app.route("/todo")
+def todo():
+    if user_id in y:
+        pass
 if __name__ == "__main__":
     app.run(debug=True)
